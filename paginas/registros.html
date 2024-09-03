@@ -46,8 +46,18 @@
                 console.error("Error al capturar la imagen:", err);
             });
         }
-        function compartirEnRedes(nombre, foto) {
-  const urlCompleta = 'https://artstrokesmx.github.io/Corriending/Media/carreras/' + foto;
+//        function compartirEnRedes(nombre, foto) {
+//  const urlCompleta = 'https://artstrokesmx.github.io/Corriending/Media/carreras/' + foto;
+//
+//  const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
+//
+//  console.log('URL de compartición:', urlCompartir);
+//
+//  window.open(urlCompartir, '_blank');
+//}
+
+function compartirEnRedes(nombre, foto) {
+  const urlCompleta = `https://artstrokesmx.github.io/Corriending/Media/carreras/${foto}`;
 
   const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
 
@@ -55,6 +65,7 @@
 
   window.open(urlCompartir, '_blank');
 }
+
     </script>
 
     <script type="module" src="../modulos/principal.js"></script>
