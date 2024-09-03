@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-size: 62.5%;
+}
+header{
+    display: flex;
+    background-color: rgb(94, 90, 90);
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+header ul{
+    display: flex;
+    margin-top: 5px;
+}
+header li{
+    list-style: none;
+    font-size: 1.2rem;
+}
+header li a{
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 0 15px;
+}
+main{
+    font-size: 1.6rem;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin: 5px auto
+}
+h3{
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.buscadorDeNombres{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    gap: 50px;
+    margin-top: 10px;
+}
+#botonBuscar{
+    display: flex;
+    margin: 10px auto;
+    width: 50px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.fotoCompartir{
+    position: relative;
+    font-size: 1.6rem;
+    width: 90vw;
+    justify-content: center;
+    margin: 0 auto;
+}
+.fotoCompartir img{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin: 0 auto;   
+    object-fit: cover;
+}
+
+.datosCarrera{
+    width: 90vw;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    gap: 10px;
+    bottom: 0;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.384);
+}
+.datosImpresion{
+    display: flex;
+    position:relative;
+    flex-direction: column;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+.datosImpresion p{
+    margin: 2px auto 2px auto;
+}
+.datosImpresion p:nth-child(2){
+    font-size: 1.6rem;
+}
+.medallero{
+    width: 10vw;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.384);
+    margin-top: 5px;
+    justify-content: center;
+    border-radius: 16px 0px 0px 16px;
+}
+.medallero img{
+    width: 5vw;
+    margin-top: 7px;
+    margin-bottom: 4px;
+}
+.medallero p{
+    margin-top: 4px;
+    margin-bottom: 10px;
+    color: aliceblue;
+    font-size: .6rem;
+    text-align: center;
+    
+}
+.volador{
+    font-size: 1.6rem;
+}
+#logoImpresion{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.404);
+    border-radius: 50%;
+}
+.resmensuales{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+.resmensuales p{
+    font-size: 1.6rem;
+}
+.resmensuales div{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: -4px;
+}
+#bCaptura{
+    display: flex;
+    font-size: 1.2rem;
+    background-color: black;
+    color: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+#bCaptura img{
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 0;
+}
+
+/* ///////// pagina inicio */
+#reconocimiento{
+    display: flex;
+    justify-content: center;
+}
+#mejoresCorredores{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+#mejoresCorredores img{
+    width: 30vw;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+.parrafos{
+    font-size: 1.6rem;
+}
+#saludos{
+    text-align: center;
+}
+#saludos p{
+    font-size: 1.2rem;
+}

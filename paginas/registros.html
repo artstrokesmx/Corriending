@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <header id="header">
+
+    </header>
+    <main>
+        <section class="buscadorDeNombres">
+            <select id="nombreCorredor"></select>
+            <input type="date" id="fechaConsulta">
+            </section>
+            <button id="botonBuscar" >Buscar</button>
+        
+
+        <div id="resultados"></div>
+         <button onclick="captura()" id="bCaptura">Descargar <img src="../Media/iconos/descarga.png" alt=""></button> 
+
+    </main>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script>
+        function captura() {
+            const element = document.getElementById('capturemos');
+ 
+            if (!element) {
+                console.error("El elemento con id 'capturemos' no fue encontrado.");
+                return;
+            }
+ 
+            html2canvas(element, {
+                scale: 5,
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.download = 'captura.png';
+                link.href = imgData;
+                link.click();
+            }).catch(err => {
+                console.error("Error al capturar la imagen:", err);
+            });
+        }
+        function compartirEnRedes(nombre, foto) {
+  const urlCompleta = 'http://127.0.0.1:5500/paginas/Media/carreras/' + foto;
+
+  const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
+
+  console.log('URL de compartición:', urlCompartir);
+
+  window.open(urlCompartir, '_blank');
+}
+    </script>
+
+    <script type="module" src="../modulos/principal.js"></script>
+    <script src="../pagJs/registros.js"></script>
+    <script src="../pagJs/generales.js"></script>
+</body>
+</html>
