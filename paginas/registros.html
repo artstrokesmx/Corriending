@@ -38,6 +38,7 @@ function captura() {
 
     html2canvas(element, {
         scale: 5,
+        useCORS: true
     }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const link = document.createElement('a');
