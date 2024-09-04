@@ -35,23 +35,33 @@ for (let i = 0; i < articulos.length; i++) {
   head.appendChild(imageMeta);
   head.appendChild(urlMeta);
 
-  const title = articulo["articulo" + (i + 1)].titulo; // Example for dynamic access
-  const description = articulo["articulo" + (i + 1)].descripcion;
-  const image = articulo["articulo" + (i + 1)].imagen;
+  const tituloart = articulo["articulo" + (i + 1)].titulo; // Example for dynamic access
+  const descripcionart = articulo["articulo" + (i + 1)].descripcion;
+  const imagenart = articulo["articulo" + (i + 1)].imagen;
+  const cuerpo = articulo["articulo" + (i+1)].texto
   const enlace = articulo["articulo" + (i + 1)].enlace;
 
 
 
-  const articleElement = document.createElement('article');
+  const articulobox = document.createElement('article');
   const titleElement = document.createElement('h2');
-  titleElement.textContent = title;
-  const descriptionElement = document.createElement('p');
-  descriptionElement.textContent = description;   
+  titleElement.textContent = tituloart;
+  const descripcionp = document.createElement('p');
+  descripcionp.textContent = descripcionart;   
+  const imgbox = document.createElement('img')
+    imgbox.src = imagenart
+  const cuerpop = document.createElement('p')
+    cuerpop.textContent = cuerpo
+  const enlacebox = document.createElement('link')
+    enlacebox.href = enlace
 
-  articleElement.appendChild(titleElement);
-  articleElement.appendChild(descriptionElement);
+  articulobox.appendChild(titleElement);
+  articulobox.appendChild(descripcionp);
+  articulobox.appendChild(imgbox)
+  articulobox.appendChild(cuerpop)
+  articulobox.appendChild(enlacebox)
   
-    panel.appendChild(articleElement);
+    panel.appendChild(articulobox);
   
 }
 })
