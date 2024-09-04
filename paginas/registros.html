@@ -24,8 +24,10 @@
         <!-- <button onclick="captura()" id="bCaptura">Descargar <img src="../Media/iconos/descarga.png" alt=""></button> -->
         <!-- <button onclick="compartirEnRedes('${corredor.nombre}')">Compartir en Redes Sociales</button> -->
 
-        <!-- <button onclick="compartirEnRedes('Nalle', 'https://artstrokesmx.github.io/Corriending/Media/carreras/carrera9.jpg', '<div class="datosImpresion"><p>Fecha: 02/09/2024</p><p>Distancia: 3.8 km</p><p>Tiempo: 1:08:25</p><p>Velocidad: 3.35 km/h</p><p>Tiempo por km: 18.02 min/km</p></div>')">Compartir en Redes Sociales</button> -->
-
+        <button onclick="crearPaginaTemporal('Nalle', 'https://artstrokesmx.github.io/Corriending/Media/carreras/carrera9.jpg', '<div class=&quot;datosImpresion&quot;><p>Fecha: 02/09/2024</p><p>Distancia: 3.8 km</p><p>Tiempo: 1:08:25</p><p>Velocidad: 3.35 km/h</p><p>Tiempo por km: 18.02 min/km</p></div>')">
+            Compartir en Redes Sociales 2
+        </button>
+        
 
     </main>
     <canvas id="canvas" style="display:none;"></canvas>
@@ -37,32 +39,51 @@
 
 
 
-<script>
- function crearPaginaTemporal(nombre, foto, detalles) {
-    // Crear una URL con query strings que puedes usar en una plantilla HTML en tu servidor
-    const params = new URLSearchParams({
-        nombre: nombre,
-        foto: foto,
-        detalles: detalles
+<script> 
+function captura() {
+    const element = document.getElementById('capturemos');
+
+    if (!element) {
+        console.error("El elemento con id 'capturemos' no fue encontrado.");
+        return;
+    }
+
+    html2canvas(element, {
+        scale: 5,
+        useCORS: true
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.download = 'captura.png';
+        link.href = imgData;
+        link.click();
+    }).catch(err => {
+        console.error("Error al capturar la imagen:", err);
     });
-
-    const urlTemporal = `https://artstrokesmx.github.io/Corriending/paginas/plantillatemporal.html?${params.toString()}`;
-
-    // Abrir la nueva URL en una nueva ventana (opcional)
-    window.open(urlTemporal, '_blank');
-
-    // Compartir la URL temporal en Facebook
-    compartirEnRedes(urlTemporal);
 }
 
-function compartirEnRedes(urlTemporal) {
-    const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlTemporal)}`;
+function compartirEnRedes(nombre) {
+    const urlCompleta = window.location.href;  // Esto toma la URL actual de la página
+
+    const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
+
+    console.log('URL de compartición:', urlCompartir);
+    console.log("Esta es completa:",urlCompleta)
+
     window.open(urlCompartir, '_blank');
 }
+        function compartirEnRedes(nombre, foto) {
+  const urlCompleta = `${foto}`;
 
+  const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
 
+  console.log('URL de compartición:', urlCompartir);
+  console.log(urlCompleta)
 
+  window.open(urlCompartir, '_blank');
+}
 
+</script>
 </script>
 
   
