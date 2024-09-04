@@ -103,7 +103,7 @@ function generarHtmlResultados(corredor, actividad, velocidad, tiempoPorKm, esGa
         <section class = "resmensuales">
             <p> Para tu meta mensual faltan: </p>${distanciaFaltante} <p> km</p>
         </section>
-            <button onclick="compartirEnRedes('${corredor.nombre}', '${actividad.foto}')">Compartir en Redes Sociales</button>
+            <!--<button onclick="compartirEnRedes('${corredor.nombre}', '${actividad.foto}')">Compartir en Redes Sociales</button>-->
         
     `;
 

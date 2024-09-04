@@ -26,17 +26,10 @@
         
 
     </main>
-    <canvas id="canvas" style="display:none;"></canvas>
+    <!-- <canvas id="canvas" style="display:none;"></canvas> -->
 
-
-
-
-
-
-
-
-<script> 
-function captura() {
+<script>
+    function captura() {
     const element = document.getElementById('capturemos');
 
     if (!element) {
@@ -53,32 +46,21 @@ function captura() {
         link.download = 'captura.png';
         link.href = imgData;
         link.click();
+        console.log("esta es la imagen",imgData)
     }).catch(err => {
         console.error("Error al capturar la imagen:", err);
     });
 }
+// function compartirEnRedes(nombre, foto) {
+//   const urlCompleta = `${foto}`;
 
-function compartirEnRedes(nombre) {
-    const urlCompleta = window.location.href;  // Esto toma la URL actual de la página
+//   const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
 
-    const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
+//   console.log('URL de compartición:', urlCompartir);
+//   console.log(urlCompleta)
 
-    console.log('URL de compartición:', urlCompartir);
-    console.log("Esta es completa:",urlCompleta)
-
-    window.open(urlCompartir, '_blank');
-}
-        function compartirEnRedes(nombre, foto) {
-  const urlCompleta = `${foto}`;
-
-  const urlCompartir = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlCompleta)}&quote=${encodeURIComponent(nombre)}%20ha%20completado%20una%20carrera!`;
-
-  console.log('URL de compartición:', urlCompartir);
-  console.log(urlCompleta)
-
-  window.open(urlCompartir, '_blank');
-}
-
+//   window.open(urlCompartir, '_blank');
+// }
 </script>
 </script>
 
