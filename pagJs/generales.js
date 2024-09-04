@@ -14,15 +14,22 @@ const liregistros = document.createElement('li')
 const liregistrosa = document.createElement('a')
     liregistrosa.href = "../paginas/registros.html"
     liregistrosa.textContent = "Registros"
+const liblog =document.createElement('li')
+const libloga = document.createElement('a')
+    libloga.href = "../paginas/blog.html"
+    libloga.textContent = "Blog"
+
 
 cabecera.appendChild(cabecerabox)
 cabecerabox.appendChild(listmenu)
-listmenu.appendChild(liinicio)
-liinicio.appendChild(liinicioa)
-listmenu.appendChild(liregistros)
-liregistros.appendChild(liregistrosa)
 
+listmenu.appendChild(liinicio)
 listmenu.appendChild(liregistros)
+listmenu.appendChild(liblog)
+
+liinicio.appendChild(liinicioa)
+liregistros.appendChild(liregistrosa)
+liblog.appendChild(libloga)
 
 cabecerabox.appendChild(cabeceratitulo)
 cabeceratitulo.appendChild(cabeceratitulotxt)
