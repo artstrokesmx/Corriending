@@ -26,7 +26,6 @@
         
 
     </main>
-    <!-- <canvas id="canvas" style="display:none;"></canvas> -->
 
 <script>
     function captura() {
@@ -36,8 +35,7 @@
         console.error("El elemento con id 'capturemos' no fue encontrado.");
         return;
     }
-
-    html2canvas(element, {
+    html2canvas(element,{
         scale: 5,
         useCORS: true
     }).then(canvas => {
